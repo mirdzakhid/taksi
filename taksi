@@ -13,3 +13,12 @@ c_distance_list = distance_list[:]
 c_price_list = price_list[:]
 index_list_d = []               
 index_list_p = []
+max_distance = 0
+for i in range(employees_num):                              
+    index = c_distance_list.index(max(c_distance_list))
+    index_list_d.append(index)
+    c_distance_list[index] = 0
+for i in range(employees_num):
+    index = c_price_list.index(min(c_price_list))
+    index_list_p.append(index)
+    c_price_list[index] = 10**10
