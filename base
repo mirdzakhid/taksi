@@ -1,0 +1,10 @@
+def out(number):
+    num = str(number)    
+    result = list(num)
+    len_check = len(result)
+    output = []
+    if len(result) > 6:
+        print('Слишком большое число')
+    while len(result) < 6:
+        zero = ['0']
+        result = zero + result    
