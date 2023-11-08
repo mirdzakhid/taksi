@@ -7,8 +7,8 @@ def out(number):
         print('Слишком большое число')
     while len(result) < 6:
         zero = ['0']
-        result = zero + result
-      if result[0] != '0':
+        result = zero + result    
+    if result[0] != '0':
         if result[0] == '9': a0 = 'девятьсот'
         if result[0] == '8': a0 = 'восемьсот'
         if result[0] == '7': a0 = 'семьсот'
@@ -97,4 +97,34 @@ def out(number):
             if result[5] == '4': a4 = 'четырнадцать'
             if result[5] == '3': a4 = 'тринадцать'
             if result[5] == '2': a4 = 'двенадцать'
-            if result[5] == '1': a4 = 'оди
+            if result[5] == '1': a4 = 'одиннадцать'
+            if result[5] == '0': a4 = 'десять'
+        output.append(a4)
+    if result[5] != '0':
+        if result[4] != '1':
+            if result[5] == '9': a5 = 'девять'
+            if result[5] == '8': a5 = 'восемь'
+            if result[5] == '7': a5 = 'семь'
+            if result[5] == '6': a5 = 'шесть'
+            if result[5] == '5': a5 = 'пять'
+            if result[5] == '4': a5 = 'четыре'
+            if result[5] == '3': a5 = 'три'
+            if result[5] == '2': a5 = 'два'
+            if result[5] == '1': a5 = 'один'
+            output.append(a5)
+    output.append('рублей')
+    if result[5] != '0':
+        if result[4] != '1':
+            if result[5] == '4':
+                output.pop()
+                output.append('рубля') 
+            if result[5] == '3':
+                output.pop()
+                output.append('рубля')
+            if result[5] == '2':
+                output.pop()
+                output.append('рубля')
+            if result[5] == '1':
+                output.pop()
+                output.append('рубль')
+    print(str.capitalize(' '.join(output)))
